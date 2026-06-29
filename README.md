@@ -1,40 +1,40 @@
-# Joey Android Apps — organization website
+# Joey Android Apps — studio website
 
-Static site that serves as the **organization website** required for the Google Play
-**Organization** developer account (health apps must publish from an org account). It also gives
-the studio a public presence and links to each app's privacy policy / terms.
+The public website for **Joey Android Apps**, an independent Android studio. It doubles as the
+**organization website** for the Google Play Organization developer account, gives the studio a
+public presence, pitches our Claude Code build pipeline, and links every app to its hosted
+privacy policy and terms.
 
-- `index.html` — the whole site (self-contained, inline CSS).
-- `assets/` — app icons (e.g. `puffers.png`).
+- `index.html` — the whole site (self-contained, inline CSS + a few lines of JS).
+- `assets/favicon.svg` — site icon.
+- `assets/apps/<app>/` — per-app store assets pulled from each project: `icon.png`,
+  `feature.png`, and `shot1..N.jpg` (screenshots, resized for the web).
+- `CNAME` — custom domain for GitHub Pages: `home.joeyapps.abrdns.com`.
 
-## Deploy (target: `home.joeyapps.abrdns.com`, on the Deck's shared Caddy)
+## Hosting — GitHub Pages
 
-1. **DNS** — in Google Cloud DNS (the `abrdns.com` zone, same place as the other subdomains), add:
+This site is served by **GitHub Pages** from the [`trentondyck/joeyapps-site`](https://github.com/trentondyck/joeyapps-site)
+repo (the `main` branch). It is **not** served by the Deck's Caddy.
 
-   ```
-   Type: A   Host: home.joeyapps   Value: 64.180.241.202
-   ```
-
-   (Same WAN IP as `puffers.joeyapps.abrdns.com` / `policies.joeyapps.abrdns.com`.)
-
-2. **Caddy** — append this block to `/etc/caddy/Caddyfile` (static file server, auto-HTTPS):
-
-   ```
-   home.joeyapps.abrdns.com {
-       root * /home/deck/claude-projects/joeyapps-site
-       file_server
-   }
-   ```
-
-3. **Reload** the shared proxy (provisions the TLS cert automatically):
-
-   ```
-   sudo systemctl restart bcparks-caddy
-   ```
-
-Then `https://home.joeyapps.abrdns.com` is the URL to enter as the **Organization website** in the
-Play Console org account.
+- **Live URL:** https://home.joeyapps.abrdns.com (the `CNAME` file sets the custom domain).
+- **DNS:** the `home.joeyapps` record in the `abrdns.com` zone points at GitHub Pages.
+- **Deploy:** push to `main` — GitHub Pages rebuilds automatically. No server, no Caddy reload.
 
 ## Updating
-Edit `index.html` and `git commit`. Caddy serves the files directly — no rebuild, no restart needed
-for content changes.
+
+1. Edit `index.html` (or refresh assets — see below).
+2. `git commit` and `git push`. GitHub Pages publishes within a minute or two.
+
+## Refreshing app assets
+
+App store assets live in each app's own repo (`../cloud-city`, `../lexical-lattice`,
+`../voids-horizon`, `../puffers`). To re-pull and optimize them into `assets/apps/`, run a script
+like the one used to generate them: copy each app's `store_icon.png` → `icon.png` (256px),
+`feature_graphic.png` → `feature.png` (1024×500), and a couple of `screenshots/*` → `shotN.jpg`
+(resized to ~880px tall) with Pillow.
+
+## App policies
+
+Every app links to its hosted privacy policy and terms at
+`https://policies.joeyapps.abrdns.com/<app>/{privacy-policy,terms-of-service}.html`
+(served separately from the `../policies` project).
