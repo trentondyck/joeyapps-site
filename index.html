@@ -127,7 +127,10 @@
   .app-meta{ flex:1; min-width:0; }
   .status{ display:inline-flex; align-items:center; gap:7px; font-family:var(--font-ui); font-size:11px; font-weight:700;
     letter-spacing:.05em; text-transform:uppercase; color:var(--c); background:color-mix(in srgb,var(--c) 12%, transparent);
-    border:1px solid color-mix(in srgb,var(--c) 40%, transparent); padding:4px 10px; border-radius:999px; backdrop-filter:blur(4px); }
+    border:1px solid color-mix(in srgb,var(--c) 40%, transparent); padding:4px 10px; border-radius:999px; backdrop-filter:blur(4px);
+    text-decoration:none; }
+  a.status{ cursor:pointer; transition:background .15s, border-color .15s; }
+  a.status:hover{ background:color-mix(in srgb,var(--c) 22%, transparent); border-color:color-mix(in srgb,var(--c) 60%, transparent); }
   .status .d{ width:7px; height:7px; border-radius:50%; background:var(--c); box-shadow:0 0 7px var(--c); }
   .card h3{ font-family:var(--font-ui); font-size:22px; margin:12px 0 2px; }
   .card .tagline{ font-size:13.5px; color:var(--c); font-weight:600; margin:0 0 10px; }
@@ -268,7 +271,7 @@
           <div class="card-body">
             <img class="app-icon" src="assets/apps/voids-horizon/icon.png" alt="Void's Horizon icon" loading="lazy">
             <div class="app-meta">
-              <span class="status"><span class="d"></span>Live on Play Store</span>
+              <a class="status" href="https://play.google.com/store/apps/details?id=com.joeyapps.voidshorizon" target="_blank" rel="noopener"><span class="d"></span>Live on Play Store</a>
               <h3>Void's Horizon</h3>
               <p class="tagline">Tilt · roll · escape the void</p>
               <p class="desc">A tilt-controlled marble maze at the edge of a black hole. Roll a glowing star
@@ -293,7 +296,7 @@
           <div class="card-body">
             <img class="app-icon" src="assets/apps/cloud-city/icon.png" alt="Cloud City icon" loading="lazy">
             <div class="app-meta">
-              <span class="status"><span class="d"></span>Live on Play Store</span>
+              <a class="status" href="https://play.google.com/store/apps/details?id=com.cloudcity.game" target="_blank" rel="noopener"><span class="d"></span>Live on Play Store</a>
               <h3>Cloud City</h3>
               <p class="tagline">Atmospheric settlement · Venus</p>
               <p class="desc">A real-time resource-management strategy game set in the clouds of Venus. Balance
@@ -317,7 +320,7 @@
           <div class="card-body">
             <img class="app-icon" src="assets/apps/lexical-lattice/icon.png" alt="Lexical Lattice icon" loading="lazy">
             <div class="app-meta">
-              <span class="status"><span class="d"></span>Live on Play Store</span>
+              <a class="status" href="https://play.google.com/store/apps/details?id=com.lexicallattice.game" target="_blank" rel="noopener"><span class="d"></span>Live on Play Store</a>
               <h3>Lexical Lattice</h3>
               <p class="tagline">Daily word puzzle with hint analytics</p>
               <p class="desc">The daily word game you love, with a strategic twist: spend earned tokens to reveal
