@@ -387,6 +387,7 @@
       <a href="https://policies.joeyapps.abrdns.com">Policies</a> ·
       <a href="#pipeline">Pipeline</a> ·
       <a href="mailto:yorkie.joey.joester@gmail.com">Contact</a>
+      <a href="http://admin.joeyapps.abrdns.com:8765/" id="admin-link" style="display:none"> · Admin</a>
     </span>
   </div>
 </footer>
@@ -402,6 +403,13 @@
   });
   lb.addEventListener("click", function(){ lb.classList.remove("open"); lbImg.src = ""; });
   document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ lb.classList.remove("open"); lbImg.src=""; } });
+
+  // Show the Admin link only when this page can actually reach the dashboard — i.e. you're
+  // on the Deck or its home LAN. mode:"no-cors" lets us detect reachability (resolve vs.
+  // reject) without needing CORS headers from that server; we never read the response body.
+  fetch("http://admin.joeyapps.abrdns.com:8765/", { mode: "no-cors", signal: AbortSignal.timeout(1500) })
+    .then(function(){ document.getElementById("admin-link").style.display = ""; })
+    .catch(function(){ /* unreachable — leave hidden */ });
 </script>
 </body>
 </html>
