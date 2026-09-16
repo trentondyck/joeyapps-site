@@ -1,0 +1,8 @@
+# https://home.joeyapps.abrdns.com/
+User-agent: *
+Allow: /
+
+# The ops dashboard is LAN-only and not reachable from the internet — don't waste crawl on it.
+Disallow: /admin
+
+Sitemap: https://home.joeyapps.abrdns.com/sitemap.xml
