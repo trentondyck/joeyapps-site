@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Joey Android Apps — an AI-assisted Android studio</title>
-<meta name="description" content="Joey Android Apps is an independent Android studio in Port Moody, BC. We ship polished apps and games fast with an end-to-end Claude Code pipeline — from idea to the Play Store." />
+<title>Joey Android Apps — an AI-assisted app studio</title>
+<meta name="description" content="Joey Android Apps is an independent app studio in Port Moody, BC. We ship polished apps and games fast with an end-to-end Claude Code pipeline — from idea to Google Play and the App Store." />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="canonical" href="https://home.joeyapps.abrdns.com/" />
 <meta property="og:title" content="Joey Android Apps" />
-<meta property="og:description" content="An independent Android studio powered by an end-to-end Claude Code build pipeline." />
+<meta property="og:description" content="An independent app studio powered by an end-to-end Claude Code build pipeline. On Google Play and the App Store." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://home.joeyapps.abrdns.com/" />
 <meta property="og:site_name" content="Joey Android Apps" />
 <meta property="og:image" content="https://home.joeyapps.abrdns.com/assets/apps/voids-horizon/feature.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Joey Android Apps" />
-<meta name="twitter:description" content="An independent Android studio powered by an end-to-end Claude Code build pipeline." />
+<meta name="twitter:description" content="An independent app studio powered by an end-to-end Claude Code build pipeline. On Google Play and the App Store." />
 <meta name="twitter:image" content="https://home.joeyapps.abrdns.com/assets/apps/voids-horizon/feature.png" />
 <script type="application/ld+json">
 {
@@ -24,7 +24,7 @@
   "name": "Joey Android Apps",
   "alternateName": "JOEY ANDROID APPS",
   "url": "https://home.joeyapps.abrdns.com/",
-  "description": "An independent Android studio in Port Moody, British Columbia, shipping apps and games to the Google Play Store with an end-to-end Claude Code build pipeline.",
+  "description": "An independent app studio in Port Moody, British Columbia, shipping apps and games to the Google Play Store and the Apple App Store with an end-to-end Claude Code build pipeline.",
   "email": "yorkie.joey.joester@gmail.com",
   "telephone": "+1-647-981-9411",
   "address": {
@@ -39,7 +39,8 @@
     "https://play.google.com/store/apps/details?id=com.joeyapps.voidshorizon",
     "https://play.google.com/store/apps/details?id=com.cloudcity.game",
     "https://play.google.com/store/apps/details?id=com.lexicallattice.game",
-    "https://play.google.com/store/apps/details?id=com.joeyapps.puffers"
+    "https://play.google.com/store/apps/details?id=com.joeyapps.puffers",
+    "https://apps.apple.com/app/id6809836040"
   ]
 }
 </script>
@@ -175,6 +176,15 @@
   .links a.chip:hover{ text-decoration:none; border-color:color-mix(in srgb,var(--c) 55%, transparent); color:var(--c); }
   .links a.chip.solid{ color:#06121a; background:var(--c); border-color:transparent; }
   .links a.chip.solid:hover{ filter:brightness(1.08); color:#06121a; }
+  /* official store badges — Apple's and Google's artwork, unmodified, at matched pill heights */
+  .store-badges{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:0 0 14px; }
+  .store-badges a{ display:inline-flex; border-radius:9px; transition:transform .2s, filter .2s; }
+  .store-badges a:hover{ transform:translateY(-2px); filter:brightness(1.06); text-decoration:none; }
+  .store-badges img{ height:44px; width:auto; display:block; }
+  @media(max-width:560px){ .store-badges img{ height:38px; } }
+  .status.soon{ color:var(--muted); background:rgba(255,255,255,.04); border-color:var(--line); }
+  .status.soon .d{ background:var(--muted-d); box-shadow:none; }
+  .status-row{ display:flex; flex-wrap:wrap; gap:7px; align-items:center; }
   .shots{ display:flex; gap:12px; overflow-x:auto; padding:4px 22px 22px; scrollbar-width:thin; }
   .shots img{ height:300px; border-radius:12px; border:1px solid var(--line); flex:none;
     background:var(--navy-900); transition:.25s; cursor:zoom-in; }
@@ -207,7 +217,7 @@
   <div class="wrap">
     <nav class="nav">
       <span class="logo-ring"><span class="shine"></span><span class="face">J</span></span>
-      <span class="brand">Joey Android Apps<small>Port Moody, BC · est. 2025</small></span>
+      <span class="brand">Joey Android Apps<small>Port Moody, BC · est. 2026</small></span>
       <span class="spacer"></span>
       <span class="nav-links">
         <a href="#pipeline">The pipeline</a>
@@ -221,11 +231,12 @@
 <main>
   <!-- HERO -->
   <section class="wrap hero">
-    <span class="pill"><span class="dot"></span>Independent Android studio · British Columbia 🇨🇦</span>
-    <h1>We ship real Android apps —<br><span class="grad">at the speed of a build pipeline.</span></h1>
+    <span class="pill"><span class="dot"></span>Independent app studio · British Columbia 🇨🇦</span>
+    <h1>We ship real mobile apps —<br><span class="grad">at the speed of a build pipeline.</span></h1>
     <p class="sub">Joey Android Apps is a small studio with an outsized output. The reason is our
       engine: an end-to-end <strong>Claude Code</strong> pipeline that carries an idea from a blank
-      folder to a signed, published app on the Google Play Store. Same craft, a fraction of the time.</p>
+      folder to a signed, published app on <strong>Google Play</strong> and the <strong>App Store</strong>.
+      Same craft, a fraction of the time.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#pipeline">See how we build →</a>
       <a class="btn btn-ghost" href="#apps">Browse the apps</a>
@@ -233,6 +244,7 @@
     <div class="stat-row">
       <div class="stat"><b>4</b><span>apps &amp; games shipped</span></div>
       <div class="stat"><b>1</b><span>reusable build pipeline</span></div>
+      <div class="stat"><b>2</b><span>app stores shipped to</span></div>
       <div class="stat"><b>0</b><span>ads or tracking-for-its-own-sake</span></div>
       <div class="stat"><b>100%</b><span>privacy policies published</span></div>
     </div>
@@ -244,7 +256,7 @@
       <p class="eyebrow">Our edge</p>
       <h2 class="title">An automated app studio, built on Claude skills</h2>
       <p class="section-lead">Every app you see below came off the same line. We've codified the whole
-        lifecycle of an Android release into a set of reusable <strong>Claude Code skills</strong> — so the
+        lifecycle of a mobile release into a set of reusable <strong>Claude Code skills</strong> — so the
         boring, error-prone parts (scaffolding, signing, store assets, policies, publishing) are automated,
         and the creative part gets all of our attention.</p>
 
@@ -276,8 +288,9 @@
         <div class="step">
           <span class="num">05</span>
           <h3>Publish</h3>
-          <p><code>/publish</code> pushes the app bundle straight to the Play Store, versioned and signed,
-            with content ratings and data-safety answers prepared.</p>
+          <p><code>/publish</code> pushes the app bundle straight to Google Play, versioned and signed,
+            with content ratings and data-safety answers prepared — and the same line archives, signs and
+            uploads the iOS build to App Store Connect.</p>
         </div>
         <div class="step">
           <span class="num">06</span>
@@ -295,7 +308,8 @@
       <p class="eyebrow">The catalogue</p>
       <h2 class="title">Apps &amp; games we've shipped</h2>
       <p class="section-lead">Four apps, four genres — strategy, word puzzle, tilt-physics arcade, and a
-        family health tool. Every one links to its hosted privacy policy and terms.</p>
+        family health tool. All four are live on Google Play, Puffers is on the App Store too, and every one
+        links to its hosted privacy policy and terms.</p>
 
       <div class="apps">
 
@@ -305,12 +319,13 @@
           <div class="card-body">
             <img class="app-icon" src="assets/apps/voids-horizon/icon.png" alt="Void's Horizon icon" loading="lazy">
             <div class="app-meta">
-              <a class="status" href="https://play.google.com/store/apps/details?id=com.joeyapps.voidshorizon" target="_blank" rel="noopener"><span class="d"></span>Live on Play Store</a>
+              <div class="status-row"><span class="status"><span class="d"></span>Live on Play Store</span><span class="status soon"><span class="d"></span>Coming to iOS</span></div>
               <h3>Void's Horizon</h3>
               <p class="tagline">Tilt · roll · escape the void</p>
               <p class="desc">A tilt-controlled marble maze at the edge of a black hole. Roll a glowing star
                 across 30 hand-built mazes of ice, wormholes and gravity storms — chase 90 stars and 60+
                 cosmetic skins. Pure physics, plays fully offline.</p>
+              <div class="store-badges"><a href="https://play.google.com/store/apps/details?id=com.joeyapps.voidshorizon" target="_blank" rel="noopener"><img src="assets/badges/google-play.png" alt="Get it on Google Play" loading="lazy" width="564" height="168"></a></div>
               <div class="links">
                 <a class="chip" href="https://policies.joeyapps.abrdns.com/voids-horizon/privacy-policy.html">Privacy policy</a>
                 <a class="chip" href="https://policies.joeyapps.abrdns.com/voids-horizon/terms-of-service.html">Terms of service</a>
@@ -330,12 +345,13 @@
           <div class="card-body">
             <img class="app-icon" src="assets/apps/cloud-city/icon.png" alt="Cloud City icon" loading="lazy">
             <div class="app-meta">
-              <a class="status" href="https://play.google.com/store/apps/details?id=com.cloudcity.game" target="_blank" rel="noopener"><span class="d"></span>Live on Play Store</a>
+              <span class="status"><span class="d"></span>Live on Play Store</span>
               <h3>Cloud City</h3>
               <p class="tagline">Atmospheric settlement · Venus</p>
               <p class="desc">A real-time resource-management strategy game set in the clouds of Venus. Balance
                 air, power and food across a floating colony, build factories, research upgrades, and survive
                 12 orbital cycles. Fully offline, no permissions required.</p>
+              <div class="store-badges"><a href="https://play.google.com/store/apps/details?id=com.cloudcity.game" target="_blank" rel="noopener"><img src="assets/badges/google-play.png" alt="Get it on Google Play" loading="lazy" width="564" height="168"></a></div>
               <div class="links">
                 <a class="chip" href="https://policies.joeyapps.abrdns.com/cloud-city/privacy-policy.html">Privacy policy</a>
                 <a class="chip" href="https://policies.joeyapps.abrdns.com/cloud-city/terms-of-service.html">Terms of service</a>
@@ -354,12 +370,13 @@
           <div class="card-body">
             <img class="app-icon" src="assets/apps/lexical-lattice/icon.png" alt="Lexical Lattice icon" loading="lazy">
             <div class="app-meta">
-              <a class="status" href="https://play.google.com/store/apps/details?id=com.lexicallattice.game" target="_blank" rel="noopener"><span class="d"></span>Live on Play Store</a>
+              <span class="status"><span class="d"></span>Live on Play Store</span>
               <h3>Lexical Lattice</h3>
               <p class="tagline">Daily word puzzle with hint analytics</p>
               <p class="desc">The daily word game you love, with a strategic twist: spend earned tokens to reveal
                 every possible remaining word. One word, five attempts, a Perfect 1.0 Hall of Fame — and no
                 pay-to-win. Stats stored locally, no account required.</p>
+              <div class="store-badges"><a href="https://play.google.com/store/apps/details?id=com.lexicallattice.game" target="_blank" rel="noopener"><img src="assets/badges/google-play.png" alt="Get it on Google Play" loading="lazy" width="564" height="168"></a></div>
               <div class="links">
                 <a class="chip" href="https://policies.joeyapps.abrdns.com/lexical-lattice/privacy-policy.html">Privacy policy</a>
                 <a class="chip" href="https://policies.joeyapps.abrdns.com/lexical-lattice/terms-of-service.html">Terms of service</a>
@@ -378,12 +395,13 @@
           <div class="card-body">
             <img class="app-icon" src="assets/apps/puffers/icon.png" alt="Puffers icon" loading="lazy">
             <div class="app-meta">
-              <a class="status" href="https://play.google.com/store/apps/details?id=com.joeyapps.puffers" target="_blank" rel="noopener"><span class="d"></span>Live on Play Store</a>
+              <span class="status"><span class="d"></span>Live on iOS &amp; Android</span>
               <h3>Puffers</h3>
               <p class="tagline">Shared inhaler tracker for families</p>
               <p class="desc">Makes running out of inhaler medication impossible to do by accident — and ends the
                 "did the other parent already give it?" question. Every puff is a one-tap, append-only log shared
                 across caregivers, with dose reminders, refill alerts and a count that's always right.</p>
+              <div class="store-badges"><a href="https://apps.apple.com/app/id6809836040" target="_blank" rel="noopener"><img src="assets/badges/app-store.svg" alt="Download on the App Store" loading="lazy" width="120" height="40"></a><a href="https://play.google.com/store/apps/details?id=com.joeyapps.puffers" target="_blank" rel="noopener"><img src="assets/badges/google-play.png" alt="Get it on Google Play" loading="lazy" width="564" height="168"></a></div>
               <div class="links">
                 <a class="chip" href="https://policies.joeyapps.abrdns.com/puffers/privacy-policy.html">Privacy policy</a>
                 <a class="chip" href="https://policies.joeyapps.abrdns.com/puffers/terms-of-service.html">Terms of service</a>
@@ -394,6 +412,7 @@
             <img src="assets/apps/puffers/shot1.jpg" alt="Puffers — welcome screen" loading="lazy">
             <img src="assets/apps/puffers/shot2.jpg" alt="Puffers — dose tracker" loading="lazy">
             <img src="assets/apps/puffers/shot3.jpg" alt="Puffers — dose ring" loading="lazy">
+            <img src="assets/apps/puffers/shot4.jpg" alt="Puffers — history, logs and charts" loading="lazy">
           </div>
         </article>
 
