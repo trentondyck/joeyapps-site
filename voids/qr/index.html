@@ -43,6 +43,14 @@
   .tag.ok{ color:var(--ok); background:rgba(111,224,168,.10); border:1px solid rgba(111,224,168,.35); }
   .tag.bad{ color:var(--bad); background:rgba(255,122,122,.10); border:1px solid rgba(255,122,122,.35); }
   .card.broken img{ opacity:.55; }
+  table.res{ width:100%; border-collapse:collapse; font-size:13px; margin-top:10px; }
+  table.res th{ font-family:var(--font-display); font-weight:700; font-size:10px;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--lilac); text-align:left;
+    padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.res td{ padding:7px 10px; border-bottom:1px solid rgba(150,120,230,.09); color:var(--muted); }
+  table.res td.y{ color:var(--ok); } table.res td.n{ color:var(--bad); }
+  table.res tr td:first-child{ color:var(--ink); }
+  @media(max-width:620px){ table.res{ font-size:11px; } table.res th,table.res td{ padding:6px 5px; } }
   footer{ margin-top:46px; padding-top:20px; border-top:1px solid var(--line);
     color:var(--muted-d); font-size:13px; }
   footer a{ color:var(--muted); }
@@ -121,6 +129,92 @@
       <span class="tag bad">DOES NOT SCAN</span>
     </div>
   </div>
+
+
+  <h2>Experiments — junk right up to the code</h2>
+  <p>Full-contrast fake modules marching in toward the real code. “Gap” is how many modules of
+    clear space are left around it; the QR spec asks for 4. <b>Scan these.</b> I predicted the
+    tight ones would fail and I was wrong — see the note under the grid.</p>
+  <div class="grid">
+    <div class="card">
+      <img src="exp-tight-4.png" alt="Circular QR, 4-module gap">
+      <div class="name">Gap 4 · to spec</div>
+      <div class="desc">Full clear space. What the spec asks for.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+    <div class="card">
+      <img src="exp-tight-3.png" alt="Circular QR, 3-module gap">
+      <div class="name">Gap 3</div>
+      <div class="desc">One module inside spec. Best performer of the whole set.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+    <div class="card">
+      <img src="exp-tight-2.png" alt="Circular QR, 2-module gap">
+      <div class="name">Gap 2</div>
+      <div class="desc">Half the clear space gone.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+    <div class="card">
+      <img src="exp-tight-1.png" alt="Circular QR, 1-module gap">
+      <div class="name">Gap 1</div>
+      <div class="desc">Junk almost touching the code.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+    <div class="card">
+      <img src="exp-tight-0.png" alt="Circular QR, no gap">
+      <div class="name">Gap 0 · touching</div>
+      <div class="desc">No clear space at all. The most convincing circular code, and the
+        flakiest — it needed a bigger image before it would read.</div>
+      <span class="tag bad">MARGINAL</span>
+    </div>
+  </div>
+
+  <h2>Experiments — warped to a sphere</h2>
+  <p>Same idea, with the ring projected onto a hemisphere so it reads as a ball rather than a
+    flat disc. Modules crowd toward the rim, squash along the surface normal, and dim with
+    distance — the way a globe's surface actually foreshortens.</p>
+  <div class="grid">
+    <div class="card">
+      <img src="exp-sphere-safe.png" alt="Spherical QR, 4-module gap">
+      <div class="name">Sphere · gap 4</div>
+      <div class="desc">Clear space kept.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+    <div class="card">
+      <img src="exp-sphere-close.png" alt="Spherical QR, 2-module gap">
+      <div class="name">Sphere · gap 2</div>
+      <div class="desc">Tighter to the code.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+    <div class="card">
+      <img src="exp-sphere-touching.png" alt="Spherical QR, no gap">
+      <div class="name">Sphere · touching</div>
+      <div class="desc">No clear space. Survived every condition I threw at it.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+  </div>
+
+  <h2>What the testing actually showed</h2>
+  <p>I decoded all eight under six conditions — pristine, far away, at an 18&deg; angle, blurred,
+    and combinations. The result does <b>not</b> support what I told you earlier.</p>
+  <table class="res">
+    <tr><th>Variant</th><th>Pristine</th><th>Far</th><th>Angled</th><th>Soft</th><th>Far + angled</th><th>All three</th></tr>
+    <tr><td>Gap 4 (to spec)</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="n">fail</td><td class="n">fail</td></tr>
+    <tr><td>Gap 3</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td></tr>
+    <tr><td>Gap 2</td><td class="y">ok</td><td class="n">fail</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td></tr>
+    <tr><td>Gap 1</td><td class="y">ok</td><td class="n">fail</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td></tr>
+    <tr><td>Gap 0 (touching)</td><td class="n">fail</td><td class="n">fail</td><td class="n">fail</td><td class="n">fail</td><td class="y">ok</td><td class="n">fail</td></tr>
+    <tr><td>Sphere, gap 4</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="n">fail</td></tr>
+    <tr><td>Sphere, gap 2</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="n">fail</td></tr>
+    <tr><td>Sphere, touching</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td></tr>
+  </table>
+  <p class="note" style="margin-top:16px">Read down the columns and the ranking is not monotonic —
+    the to-spec code fails a case the no-gap sphere survives. So “the quiet zone is mandatory” was
+    wrong, and so is “it does not matter”: what it really buys is <i>margin</i>, and how much
+    depends on the decoder. This table is OpenCV, which is not what is in your pocket. iOS Camera
+    and Google Lens use different detectors and are generally more forgiving. That is the whole
+    reason these are on a page instead of in a message — <b>your phone is the only test that
+    counts.</b></p>
 
   <footer>
     Shown at screen size. On the shirt the code prints about 1.5in across, which scans from
