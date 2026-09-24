@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Void's Horizon — QR options</title>
-<meta name="description" content="Shirt QR code options for Void's Horizon. Scan each one to see which work." />
+<title>Void's Horizon — Sphere QR</title>
+<meta name="description" content="Spherical QR experiments for the Void's Horizon shirt." />
 <meta name="robots" content="noindex" />
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     --void-950:#05060a; --panel:rgba(24,18,46,.55); --line:rgba(150,120,230,.18);
     --purple:#8a49f0; --lilac:#b183ff; --pale:#eadcff;
     --ink:#eef0fb; --muted:#9a93b8; --muted-d:#6d6690;
-    --ok:#6fe0a8; --bad:#ff7a7a;
+    --ok:#6fe0a8; --warn:#ffca6f;
     --font-display:"Orbitron",system-ui,sans-serif; --font-body:"Inter",system-ui,sans-serif;
   }
   *{ box-sizing:border-box; }
@@ -25,32 +25,23 @@
   .wrap{ max-width:940px; margin:0 auto; }
   h1{ font-family:var(--font-display); font-weight:900; font-size:clamp(22px,5vw,32px);
     letter-spacing:.04em; margin:0 0 10px; color:var(--pale); }
-  .lede{ color:var(--muted); max-width:620px; margin:0 0 8px; }
+  .lede{ color:var(--muted); max-width:640px; margin:0 0 10px; }
   .lede b{ color:var(--ink); }
-  .note{ color:var(--muted-d); font-size:14px; max-width:620px; margin:0 0 30px; }
+  .note{ color:var(--muted-d); font-size:14px; max-width:640px; margin:0 0 28px; }
   h2{ font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:.24em;
-    text-transform:uppercase; color:var(--lilac); margin:34px 0 4px; }
-  h2 + p{ color:var(--muted-d); font-size:14px; margin:0 0 18px; max-width:620px; }
-  .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:18px; }
+    text-transform:uppercase; color:var(--lilac); margin:36px 0 4px; }
+  h2 + p{ color:var(--muted-d); font-size:14px; margin:0 0 18px; max-width:640px; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; }
   .card{ background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px;
     text-align:center; }
-  .card img{ width:100%; max-width:200px; height:auto; display:block; margin:0 auto 12px; }
+  .card img{ width:100%; max-width:230px; height:auto; display:block; margin:0 auto 12px; }
   .card .name{ font-family:var(--font-display); font-weight:700; font-size:12px;
     letter-spacing:.12em; text-transform:uppercase; color:var(--ink); }
   .card .desc{ font-size:13px; color:var(--muted-d); margin-top:4px; }
   .tag{ display:inline-block; margin-top:10px; font-family:var(--font-display); font-weight:700;
-    font-size:10px; letter-spacing:.14em; padding:3px 9px; border-radius:999px; }
-  .tag.ok{ color:var(--ok); background:rgba(111,224,168,.10); border:1px solid rgba(111,224,168,.35); }
-  .tag.bad{ color:var(--bad); background:rgba(255,122,122,.10); border:1px solid rgba(255,122,122,.35); }
-  .card.broken img{ opacity:.55; }
-  table.res{ width:100%; border-collapse:collapse; font-size:13px; margin-top:10px; }
-  table.res th{ font-family:var(--font-display); font-weight:700; font-size:10px;
-    letter-spacing:.1em; text-transform:uppercase; color:var(--lilac); text-align:left;
-    padding:8px 10px; border-bottom:1px solid var(--line); }
-  table.res td{ padding:7px 10px; border-bottom:1px solid rgba(150,120,230,.09); color:var(--muted); }
-  table.res td.y{ color:var(--ok); } table.res td.n{ color:var(--bad); }
-  table.res tr td:first-child{ color:var(--ink); }
-  @media(max-width:620px){ table.res{ font-size:11px; } table.res th,table.res td{ padding:6px 5px; } }
+    font-size:10px; letter-spacing:.14em; padding:3px 9px; border-radius:999px;
+    color:var(--ok); background:rgba(111,224,168,.10); border:1px solid rgba(111,224,168,.35); }
+  .tag.warn{ color:var(--warn); background:rgba(255,202,111,.10); border-color:rgba(255,202,111,.35); }
   footer{ margin-top:46px; padding-top:20px; border-top:1px solid var(--line);
     color:var(--muted-d); font-size:13px; }
   footer a{ color:var(--muted); }
@@ -58,167 +49,72 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>SHIRT QR OPTIONS</h1>
-  <p class="lede"><b>Scan each one with your phone.</b> They all point at the Void's Horizon
-    page, so a working code lands you back on the store links.</p>
-  <p class="note">The two at the bottom are here on purpose: they look the best and they do not
-    work. Scanning them is the fastest way to see why the pretty ones are a trap.</p>
+  <h1>SPHERE QR</h1>
+  <p class="lede"><b>Zero gap between the code and the sphere.</b> Modules run right up to the
+    edge of the real code — no white ring, no seam.</p>
+  <p class="note">Each one points at the Void's Horizon page, so a working scan lands you back on
+    the store links. The score is how many of six conditions each survived with OpenCV: pristine,
+    far, 18&deg; off-axis, blurred, and two combinations. Your phone is more forgiving than that,
+    so treat the score as a ranking rather than a verdict — the only test that counts is yours.</p>
 
-  <h2>Square</h2>
-  <p>What a QR actually is. The only question is how much it is styled.</p>
+  <h2>The five</h2>
+  <p>All are a real square QR with the surrounding field laid on a sphere's latitude/longitude
+    grid and projected orthographically: rows curve, columns converge at the poles, and modules
+    crowd and foreshorten toward the rim the way a globe's surface does.</p>
   <div class="grid">
     <div class="card">
-      <img src="opt-a-square.png" alt="Plain square QR code">
-      <div class="name">A · Current</div>
-      <div class="desc">What is on the shirt now. Plain, black, square.</div>
-      <span class="tag ok">SCANS</span>
+      <img src="globe-1-even.png" alt="Spherical QR, even density">
+      <div class="name">1 · Even</div>
+      <div class="desc">No shading. Flattest read, strongest texture.</div>
+      <span class="tag">3 / 6</span>
     </div>
     <div class="card">
-      <img src="opt-b-rounded.png" alt="QR code with rounded modules">
-      <div class="name">B · Rounded</div>
-      <div class="desc">Same code, softened dots. Less like a parcel label.</div>
-      <span class="tag ok">SCANS</span>
+      <img src="globe-2-lit.png" alt="Spherical QR, lit from upper left">
+      <div class="name">2 · Lit</div>
+      <div class="desc">Lit from upper-left. Most obviously a ball.</div>
+      <span class="tag">3 / 6</span>
     </div>
     <div class="card">
-      <img src="opt-c-brandeye.png" alt="QR code with rounded modules and purple corner eyes">
-      <div class="name">C · Brand eyes</div>
-      <div class="desc">Rounded, with the three corners in Void purple.</div>
-      <span class="tag ok">SCANS</span>
+      <img src="globe-3-dense.png" alt="Spherical QR, dense">
+      <div class="name">3 · Dense</div>
+      <div class="desc">Tighter grid, more modules. Busiest of the set.</div>
+      <span class="tag">3 / 6</span>
+    </div>
+    <div class="card">
+      <img src="globe-4-coarse.png" alt="Spherical QR, coarse grid">
+      <div class="name">4 · Coarse</div>
+      <div class="desc">Bigger modules, looser grid. Best scanner performance here.</div>
+      <span class="tag">5 / 6</span>
+    </div>
+    <div class="card">
+      <img src="globe-5-deep.png" alt="Spherical QR, deep shading">
+      <div class="name">5 · Deep shade</div>
+      <div class="desc">Strong terminator. Most three-dimensional, weakest scanning.</div>
+      <span class="tag warn">2 / 6</span>
     </div>
   </div>
 
-  <h2>Circular</h2>
-  <p>A real square code in the middle, with fake modules filling the ring around it — they carry
-    no data and exist only so the whole disc reads as one round code. This is what the
-    “circular QR” generators do.</p>
+  <h2>Kept for reference</h2>
+  <p>The flat no-gap code you said scans every time, for comparison against the spheres.</p>
   <div class="grid">
     <div class="card">
-      <img src="opt-circ-faint.png" alt="Circular QR with faint decorative ring">
-      <div class="name">D · Faint ring</div>
-      <div class="desc">Subtle. Reads clearly as a frame.</div>
-      <span class="tag ok">SCANS</span>
-    </div>
-    <div class="card">
-      <img src="opt-circ-mid.png" alt="Circular QR with medium decorative ring">
-      <div class="name">E · Mid ring</div>
-      <div class="desc">My pick. Sells the round look without fighting the code.</div>
-      <span class="tag ok">SCANS</span>
-    </div>
-    <div class="card">
-      <img src="opt-circ-strong.png" alt="Circular QR with strong decorative ring">
-      <div class="name">F · Strong ring</div>
-      <div class="desc">Boldest. Starts to compete with the real modules.</div>
-      <span class="tag ok">SCANS</span>
+      <img src="exp-tight-0.png" alt="Flat circular QR, no gap">
+      <div class="name">Flat · gap 0</div>
+      <div class="desc">Same idea without the sphere warp.</div>
+      <span class="tag">your baseline</span>
     </div>
   </div>
 
-  <h2>Do not use</h2>
-  <p>Both are standard presets in online QR generators. Both fail, and they fail silently — the
-    code looks perfect and simply never scans, which you would find out after the hoodies arrive.</p>
-  <div class="grid">
-    <div class="card broken">
-      <img src="opt-x-dots.png" alt="QR code with separated dot modules, does not scan">
-      <div class="name">X · Dot modules</div>
-      <div class="desc">Circles with gaps. Too little ink for a scanner to lock on.</div>
-      <span class="tag bad">DOES NOT SCAN</span>
-    </div>
-    <div class="card broken">
-      <img src="opt-y-inverted.png" alt="Inverted light-on-dark QR code, does not scan">
-      <div class="name">Y · Inverted</div>
-      <div class="desc">Light on dark, no white panel. The most integrated, the least reliable.</div>
-      <span class="tag bad">DOES NOT SCAN</span>
-    </div>
-  </div>
-
-
-  <h2>Experiments — junk right up to the code</h2>
-  <p>Full-contrast fake modules marching in toward the real code. “Gap” is how many modules of
-    clear space are left around it; the QR spec asks for 4. <b>Scan these.</b> I predicted the
-    tight ones would fail and I was wrong — see the note under the grid.</p>
-  <div class="grid">
-    <div class="card">
-      <img src="exp-tight-4.png" alt="Circular QR, 4-module gap">
-      <div class="name">Gap 4 · to spec</div>
-      <div class="desc">Full clear space. What the spec asks for.</div>
-      <span class="tag ok">SCANS</span>
-    </div>
-    <div class="card">
-      <img src="exp-tight-3.png" alt="Circular QR, 3-module gap">
-      <div class="name">Gap 3</div>
-      <div class="desc">One module inside spec. Best performer of the whole set.</div>
-      <span class="tag ok">SCANS</span>
-    </div>
-    <div class="card">
-      <img src="exp-tight-2.png" alt="Circular QR, 2-module gap">
-      <div class="name">Gap 2</div>
-      <div class="desc">Half the clear space gone.</div>
-      <span class="tag ok">SCANS</span>
-    </div>
-    <div class="card">
-      <img src="exp-tight-1.png" alt="Circular QR, 1-module gap">
-      <div class="name">Gap 1</div>
-      <div class="desc">Junk almost touching the code.</div>
-      <span class="tag ok">SCANS</span>
-    </div>
-    <div class="card">
-      <img src="exp-tight-0.png" alt="Circular QR, no gap">
-      <div class="name">Gap 0 · touching</div>
-      <div class="desc">No clear space at all. The most convincing circular code, and the
-        flakiest — it needed a bigger image before it would read.</div>
-      <span class="tag bad">MARGINAL</span>
-    </div>
-  </div>
-
-  <h2>Experiments — warped to a sphere</h2>
-  <p>Same idea, with the ring projected onto a hemisphere so it reads as a ball rather than a
-    flat disc. Modules crowd toward the rim, squash along the surface normal, and dim with
-    distance — the way a globe's surface actually foreshortens.</p>
-  <div class="grid">
-    <div class="card">
-      <img src="exp-sphere-safe.png" alt="Spherical QR, 4-module gap">
-      <div class="name">Sphere · gap 4</div>
-      <div class="desc">Clear space kept.</div>
-      <span class="tag ok">SCANS</span>
-    </div>
-    <div class="card">
-      <img src="exp-sphere-close.png" alt="Spherical QR, 2-module gap">
-      <div class="name">Sphere · gap 2</div>
-      <div class="desc">Tighter to the code.</div>
-      <span class="tag ok">SCANS</span>
-    </div>
-    <div class="card">
-      <img src="exp-sphere-touching.png" alt="Spherical QR, no gap">
-      <div class="name">Sphere · touching</div>
-      <div class="desc">No clear space. Survived every condition I threw at it.</div>
-      <span class="tag ok">SCANS</span>
-    </div>
-  </div>
-
-  <h2>What the testing actually showed</h2>
-  <p>I decoded all eight under six conditions — pristine, far away, at an 18&deg; angle, blurred,
-    and combinations. The result does <b>not</b> support what I told you earlier.</p>
-  <table class="res">
-    <tr><th>Variant</th><th>Pristine</th><th>Far</th><th>Angled</th><th>Soft</th><th>Far + angled</th><th>All three</th></tr>
-    <tr><td>Gap 4 (to spec)</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="n">fail</td><td class="n">fail</td></tr>
-    <tr><td>Gap 3</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td></tr>
-    <tr><td>Gap 2</td><td class="y">ok</td><td class="n">fail</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td></tr>
-    <tr><td>Gap 1</td><td class="y">ok</td><td class="n">fail</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td></tr>
-    <tr><td>Gap 0 (touching)</td><td class="n">fail</td><td class="n">fail</td><td class="n">fail</td><td class="n">fail</td><td class="y">ok</td><td class="n">fail</td></tr>
-    <tr><td>Sphere, gap 4</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="n">fail</td></tr>
-    <tr><td>Sphere, gap 2</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="n">fail</td></tr>
-    <tr><td>Sphere, touching</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td><td class="y">ok</td></tr>
-  </table>
-  <p class="note" style="margin-top:16px">Read down the columns and the ranking is not monotonic —
-    the to-spec code fails a case the no-gap sphere survives. So “the quiet zone is mandatory” was
-    wrong, and so is “it does not matter”: what it really buys is <i>margin</i>, and how much
-    depends on the decoder. This table is OpenCV, which is not what is in your pocket. iOS Camera
-    and Google Lens use different detectors and are generally more forgiving. That is the whole
-    reason these are on a page instead of in a message — <b>your phone is the only test that
-    counts.</b></p>
+  <h2>Why these needed a trick and the flat one did not</h2>
+  <p>A hard edge at zero gap does not decode on the spheres. The globe's rows sit at a different
+    pitch from the code's own grid, so where the two meet, module sampling loses the code's
+    boundary — the flat version never had that problem because its decoration sits on the same
+    grid, reading as a continuation. The fix keeps modules present right up to the edge but ramps
+    their opacity down over the last three modules. No gap to look at; low contrast to scan
+    against. Anything less than three modules of ramp failed.</p>
 
   <footer>
-    Shown at screen size. On the shirt the code prints about 1.5in across, which scans from
-    roughly 15in away. · <a href="../">Back to Void's Horizon</a>
+    On the shirt this prints about 1.5in across. · <a href="../">Back to Void's Horizon</a>
   </footer>
 </div>
 </body>
