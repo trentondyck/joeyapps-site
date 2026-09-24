@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Void's Horizon — Star QR</title>
+<title>Void's Horizon — Warped Star QR</title>
 <meta name="description" content="Star QR experiments for the Void's Horizon shirt." />
 <meta name="robots" content="noindex" />
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
@@ -49,57 +49,71 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>STAR QR</h1>
-  <p class="lede"><b>A star first, a code second.</b> The disc versions read as a sticker
-    because they stop at a hard rim. A star has no rim.</p>
-  <p class="note">The trick is that the light the code sits on and the light that makes it a
-    star are the same light: the core is opaque white where the code needs contrast, then falls
-    off through a corona into the background. There is no edge to notice. Scan each one — they
-    all point at the Void's Horizon page.</p>
+  <h1>WARPED STAR QR</h1>
+  <p class="lede"><b>The junk field is back, warped.</b> The same rounded-square vocabulary now
+    runs continuously from inside the code out into the star, so the square has nowhere to
+    announce itself.</p>
+  <p class="note">The thing that actually dissolved the square was colour, not shape. Junk next
+    to the code is the code&rsquo;s own near-black, so the boundary stopped being a light/dark
+    step — the field just continues — and only brightens into the corona further out, where it
+    stops looking like data and starts looking like light. Scan them; they all point at the
+    Void&rsquo;s Horizon page.</p>
 
-  <h2>The five</h2>
-  <p>All on black, no panel, rendered on transparency so the garment is the background. Spikes
-    use the same four-point geometry as the sparkle stars already in the artwork.</p>
+  <h2>Six warps</h2>
+  <p>Same code, same star, different geometry for the field around it.</p>
   <div class="grid">
     <div class="card">
-      <img src="star-1-soft.png" alt="Star QR, soft corona">
-      <div class="name">1 · Soft</div>
-      <div class="desc">Modest spikes, tight glow. Most restrained.</div>
-      <span class="tag">3 / 6</span>
-    </div>
-    <div class="card">
-      <img src="star-2-burst.png" alt="Star QR, long diffraction spikes">
-      <div class="name">2 · Burst</div>
-      <div class="desc">Long spikes. Most obviously a star at a glance.</div>
-      <span class="tag">3 / 6</span>
-    </div>
-    <div class="card">
-      <img src="star-3-six.png" alt="Star QR, six-point spikes">
-      <div class="name">3 · Six-point</div>
-      <div class="desc">Six spikes instead of four. Busiest silhouette.</div>
+      <img src="warp-1-rays.png" alt="Star QR with radial ray warp">
+      <div class="name">1 · Rays</div>
+      <div class="desc">Modules stretch radially, longer further out. Reads as light streaking
+        off a dense core.</div>
       <span class="tag warn">2 / 6</span>
     </div>
     <div class="card">
-      <img src="star-4-dusty.png" alt="Star QR with dense corona">
-      <div class="name">4 · Dusty</div>
-      <div class="desc">Dense corona. The &ldquo;wait, is that a code?&rdquo; one.</div>
+      <img src="warp-2-swirl.png" alt="Star QR with spiral warp">
+      <div class="name">2 · Swirl</div>
+      <div class="desc">Angular offset grows with radius, so the field spirals — the black
+        hole&rsquo;s own motif rather than a generic sparkle.</div>
+      <span class="tag warn">2 / 6</span>
+    </div>
+    <div class="card">
+      <img src="warp-3-dissolve.png" alt="Star QR dissolving outward">
+      <div class="name">3 · Dissolve</div>
+      <div class="desc">The code&rsquo;s grid keeps going, shrinking and scattering. The edge
+        erodes rather than ends — hardest to find the square.</div>
+      <span class="tag warn">2 / 6</span>
+    </div>
+    <div class="card">
+      <img src="warp-4-rings.png" alt="Star QR with concentric rings">
+      <div class="name">4 · Rings</div>
+      <div class="desc">Concentric bands with gaps, a pulsar shell. Best scanner margin here.</div>
       <span class="tag">3 / 6</span>
     </div>
     <div class="card">
-      <img src="star-5-nospike.png" alt="Star QR with no spikes">
-      <div class="name">5 · No spikes</div>
-      <div class="desc">Pure glow. Reads as a distant sun.</div>
-      <span class="tag">3 / 6</span>
+      <img src="warp-5-morph.png" alt="Star QR morphing square grid to polar">
+      <div class="name">5 · Morph</div>
+      <div class="desc">Square grid at the boundary easing into a polar one, so the change from
+        code to corona happens in the geometry itself.</div>
+      <span class="tag warn">1 / 6</span>
+    </div>
+    <div class="card">
+      <img src="warp-6-raysoft.png" alt="Star QR with long soft rays">
+      <div class="name">6 · Long rays</div>
+      <div class="desc">Longest streaks, no spikes. Most like an exploding star made of pixels.</div>
+      <span class="tag warn">1 / 6</span>
     </div>
   </div>
 
-  <h2>What had to change</h2>
-  <p>Two mechanical things, both worth knowing if these get tweaked later. The opaque core has
-    to reach <i>past</i> the square&rsquo;s corners — the code is inscribed, so its corners sit at
-    exactly the core radius, and a gradient that starts falling off any earlier bleeds contrast
-    straight out of the three finder patterns. And the corona modules fade in over three modules
-    as they leave the code, so the texture dissolves into the glow rather than butting against
-    it. First attempt got both wrong and scored 1/6 across the board.</p>
+  <h2>The trade-off, stated plainly</h2>
+  <p>These score worse than the plain-disc versions did, and that is not a bug to fix — it is
+    the price. Every bit of blending that makes the square stop being findable by <i>you</i>
+    also makes it marginally harder to find for a <i>decoder</i>, because both are looking for
+    the same boundary. Dissolve and long rays hide it best and score lowest; rings keeps the
+    most margin and hides it least.</p>
+  <p class="note">All of which is OpenCV, which you have already shown is pessimistic against a
+    real camera — it called your gap-0 code poor and your phone reads it every time. So treat
+    the numbers as a ranking of risk, not a pass/fail, and let your phone settle it. If the one
+    you like best scans reliably in your hand, that is the answer.</p>
 
   <footer>
     Rendered on transparency — the dark behind them is this page, and on the shirt it is the fabric. · <a href="../">Back to Void's Horizon</a>
