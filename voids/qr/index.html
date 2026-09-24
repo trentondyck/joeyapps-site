@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Void's Horizon — Sphere QR</title>
-<meta name="description" content="Spherical QR experiments for the Void's Horizon shirt." />
+<title>Void's Horizon — Star QR</title>
+<meta name="description" content="Star QR experiments for the Void's Horizon shirt." />
 <meta name="robots" content="noindex" />
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,72 +49,60 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>SPHERE QR</h1>
-  <p class="lede"><b>Zero gap between the code and the sphere.</b> Modules run right up to the
-    edge of the real code — no white ring, no seam.</p>
-  <p class="note">Each one points at the Void's Horizon page, so a working scan lands you back on
-    the store links. The score is how many of six conditions each survived with OpenCV: pristine,
-    far, 18&deg; off-axis, blurred, and two combinations. Your phone is more forgiving than that,
-    so treat the score as a ranking rather than a verdict — the only test that counts is yours.</p>
+  <h1>STAR QR</h1>
+  <p class="lede"><b>A star first, a code second.</b> The disc versions read as a sticker
+    because they stop at a hard rim. A star has no rim.</p>
+  <p class="note">The trick is that the light the code sits on and the light that makes it a
+    star are the same light: the core is opaque white where the code needs contrast, then falls
+    off through a corona into the background. There is no edge to notice. Scan each one — they
+    all point at the Void's Horizon page.</p>
 
   <h2>The five</h2>
-  <p>All are a real square QR with the surrounding field laid on a sphere's latitude/longitude
-    grid and projected orthographically: rows curve, columns converge at the poles, and modules
-    crowd and foreshorten toward the rim the way a globe's surface does.</p>
+  <p>All on black, no panel, rendered on transparency so the garment is the background. Spikes
+    use the same four-point geometry as the sparkle stars already in the artwork.</p>
   <div class="grid">
     <div class="card">
-      <img src="globe-1-even.png" alt="Spherical QR, even density">
-      <div class="name">1 · Even</div>
-      <div class="desc">No shading. Flattest read, strongest texture.</div>
+      <img src="star-1-soft.png" alt="Star QR, soft corona">
+      <div class="name">1 · Soft</div>
+      <div class="desc">Modest spikes, tight glow. Most restrained.</div>
       <span class="tag">3 / 6</span>
     </div>
     <div class="card">
-      <img src="globe-2-lit.png" alt="Spherical QR, lit from upper left">
-      <div class="name">2 · Lit</div>
-      <div class="desc">Lit from upper-left. Most obviously a ball.</div>
+      <img src="star-2-burst.png" alt="Star QR, long diffraction spikes">
+      <div class="name">2 · Burst</div>
+      <div class="desc">Long spikes. Most obviously a star at a glance.</div>
       <span class="tag">3 / 6</span>
     </div>
     <div class="card">
-      <img src="globe-3-dense.png" alt="Spherical QR, dense">
-      <div class="name">3 · Dense</div>
-      <div class="desc">Tighter grid, more modules. Busiest of the set.</div>
-      <span class="tag">3 / 6</span>
-    </div>
-    <div class="card">
-      <img src="globe-4-coarse.png" alt="Spherical QR, coarse grid">
-      <div class="name">4 · Coarse</div>
-      <div class="desc">Bigger modules, looser grid. Best scanner performance here.</div>
-      <span class="tag">5 / 6</span>
-    </div>
-    <div class="card">
-      <img src="globe-5-deep.png" alt="Spherical QR, deep shading">
-      <div class="name">5 · Deep shade</div>
-      <div class="desc">Strong terminator. Most three-dimensional, weakest scanning.</div>
+      <img src="star-3-six.png" alt="Star QR, six-point spikes">
+      <div class="name">3 · Six-point</div>
+      <div class="desc">Six spikes instead of four. Busiest silhouette.</div>
       <span class="tag warn">2 / 6</span>
     </div>
-  </div>
-
-  <h2>Kept for reference</h2>
-  <p>The flat no-gap code you said scans every time, for comparison against the spheres.</p>
-  <div class="grid">
     <div class="card">
-      <img src="exp-tight-0.png" alt="Flat circular QR, no gap">
-      <div class="name">Flat · gap 0</div>
-      <div class="desc">Same idea without the sphere warp.</div>
-      <span class="tag">your baseline</span>
+      <img src="star-4-dusty.png" alt="Star QR with dense corona">
+      <div class="name">4 · Dusty</div>
+      <div class="desc">Dense corona. The &ldquo;wait, is that a code?&rdquo; one.</div>
+      <span class="tag">3 / 6</span>
+    </div>
+    <div class="card">
+      <img src="star-5-nospike.png" alt="Star QR with no spikes">
+      <div class="name">5 · No spikes</div>
+      <div class="desc">Pure glow. Reads as a distant sun.</div>
+      <span class="tag">3 / 6</span>
     </div>
   </div>
 
-  <h2>Why these needed a trick and the flat one did not</h2>
-  <p>A hard edge at zero gap does not decode on the spheres. The globe's rows sit at a different
-    pitch from the code's own grid, so where the two meet, module sampling loses the code's
-    boundary — the flat version never had that problem because its decoration sits on the same
-    grid, reading as a continuation. The fix keeps modules present right up to the edge but ramps
-    their opacity down over the last three modules. No gap to look at; low contrast to scan
-    against. Anything less than three modules of ramp failed.</p>
+  <h2>What had to change</h2>
+  <p>Two mechanical things, both worth knowing if these get tweaked later. The opaque core has
+    to reach <i>past</i> the square&rsquo;s corners — the code is inscribed, so its corners sit at
+    exactly the core radius, and a gradient that starts falling off any earlier bleeds contrast
+    straight out of the three finder patterns. And the corona modules fade in over three modules
+    as they leave the code, so the texture dissolves into the glow rather than butting against
+    it. First attempt got both wrong and scored 1/6 across the board.</p>
 
   <footer>
-    On the shirt this prints about 1.5in across. · <a href="../">Back to Void's Horizon</a>
+    Rendered on transparency — the dark behind them is this page, and on the shirt it is the fabric. · <a href="../">Back to Void's Horizon</a>
   </footer>
 </div>
 </body>
