@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Void's Horizon — QR options</title>
+<meta name="description" content="Shirt QR code options for Void's Horizon. Scan each one to see which work." />
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --void-950:#05060a; --panel:rgba(24,18,46,.55); --line:rgba(150,120,230,.18);
+    --purple:#8a49f0; --lilac:#b183ff; --pale:#eadcff;
+    --ink:#eef0fb; --muted:#9a93b8; --muted-d:#6d6690;
+    --ok:#6fe0a8; --bad:#ff7a7a;
+    --font-display:"Orbitron",system-ui,sans-serif; --font-body:"Inter",system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; color:var(--ink); background:var(--void-950); font-family:var(--font-body);
+    line-height:1.6; -webkit-font-smoothing:antialiased; padding:34px 16px 60px;
+    background-image:radial-gradient(900px 520px at 50% 0%, rgba(138,73,240,.16), transparent 60%); }
+  .wrap{ max-width:940px; margin:0 auto; }
+  h1{ font-family:var(--font-display); font-weight:900; font-size:clamp(22px,5vw,32px);
+    letter-spacing:.04em; margin:0 0 10px; color:var(--pale); }
+  .lede{ color:var(--muted); max-width:620px; margin:0 0 8px; }
+  .lede b{ color:var(--ink); }
+  .note{ color:var(--muted-d); font-size:14px; max-width:620px; margin:0 0 30px; }
+  h2{ font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--lilac); margin:34px 0 4px; }
+  h2 + p{ color:var(--muted-d); font-size:14px; margin:0 0 18px; max-width:620px; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:18px; }
+  .card{ background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px;
+    text-align:center; }
+  .card img{ width:100%; max-width:200px; height:auto; display:block; margin:0 auto 12px; }
+  .card .name{ font-family:var(--font-display); font-weight:700; font-size:12px;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--ink); }
+  .card .desc{ font-size:13px; color:var(--muted-d); margin-top:4px; }
+  .tag{ display:inline-block; margin-top:10px; font-family:var(--font-display); font-weight:700;
+    font-size:10px; letter-spacing:.14em; padding:3px 9px; border-radius:999px; }
+  .tag.ok{ color:var(--ok); background:rgba(111,224,168,.10); border:1px solid rgba(111,224,168,.35); }
+  .tag.bad{ color:var(--bad); background:rgba(255,122,122,.10); border:1px solid rgba(255,122,122,.35); }
+  .card.broken img{ opacity:.55; }
+  footer{ margin-top:46px; padding-top:20px; border-top:1px solid var(--line);
+    color:var(--muted-d); font-size:13px; }
+  footer a{ color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>SHIRT QR OPTIONS</h1>
+  <p class="lede"><b>Scan each one with your phone.</b> They all point at the Void's Horizon
+    page, so a working code lands you back on the store links.</p>
+  <p class="note">The two at the bottom are here on purpose: they look the best and they do not
+    work. Scanning them is the fastest way to see why the pretty ones are a trap.</p>
+
+  <h2>Square</h2>
+  <p>What a QR actually is. The only question is how much it is styled.</p>
+  <div class="grid">
+    <div class="card">
+      <img src="opt-a-square.png" alt="Plain square QR code">
+      <div class="name">A · Current</div>
+      <div class="desc">What is on the shirt now. Plain, black, square.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+    <div class="card">
+      <img src="opt-b-rounded.png" alt="QR code with rounded modules">
+      <div class="name">B · Rounded</div>
+      <div class="desc">Same code, softened dots. Less like a parcel label.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+    <div class="card">
+      <img src="opt-c-brandeye.png" alt="QR code with rounded modules and purple corner eyes">
+      <div class="name">C · Brand eyes</div>
+      <div class="desc">Rounded, with the three corners in Void purple.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+  </div>
+
+  <h2>Circular</h2>
+  <p>A real square code in the middle, with fake modules filling the ring around it — they carry
+    no data and exist only so the whole disc reads as one round code. This is what the
+    “circular QR” generators do.</p>
+  <div class="grid">
+    <div class="card">
+      <img src="opt-circ-faint.png" alt="Circular QR with faint decorative ring">
+      <div class="name">D · Faint ring</div>
+      <div class="desc">Subtle. Reads clearly as a frame.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+    <div class="card">
+      <img src="opt-circ-mid.png" alt="Circular QR with medium decorative ring">
+      <div class="name">E · Mid ring</div>
+      <div class="desc">My pick. Sells the round look without fighting the code.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+    <div class="card">
+      <img src="opt-circ-strong.png" alt="Circular QR with strong decorative ring">
+      <div class="name">F · Strong ring</div>
+      <div class="desc">Boldest. Starts to compete with the real modules.</div>
+      <span class="tag ok">SCANS</span>
+    </div>
+  </div>
+
+  <h2>Do not use</h2>
+  <p>Both are standard presets in online QR generators. Both fail, and they fail silently — the
+    code looks perfect and simply never scans, which you would find out after the hoodies arrive.</p>
+  <div class="grid">
+    <div class="card broken">
+      <img src="opt-x-dots.png" alt="QR code with separated dot modules, does not scan">
+      <div class="name">X · Dot modules</div>
+      <div class="desc">Circles with gaps. Too little ink for a scanner to lock on.</div>
+      <span class="tag bad">DOES NOT SCAN</span>
+    </div>
+    <div class="card broken">
+      <img src="opt-y-inverted.png" alt="Inverted light-on-dark QR code, does not scan">
+      <div class="name">Y · Inverted</div>
+      <div class="desc">Light on dark, no white panel. The most integrated, the least reliable.</div>
+      <span class="tag bad">DOES NOT SCAN</span>
+    </div>
+  </div>
+
+  <footer>
+    Shown at screen size. On the shirt the code prints about 1.5in across, which scans from
+    roughly 15in away. · <a href="../">Back to Void's Horizon</a>
+  </footer>
+</div>
+</body>
+</html>
