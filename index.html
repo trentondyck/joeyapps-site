@@ -40,6 +40,7 @@
     "https://play.google.com/store/apps/details?id=com.cloudcity.game",
     "https://play.google.com/store/apps/details?id=com.lexicallattice.game",
     "https://play.google.com/store/apps/details?id=com.joeyapps.puffers",
+    "https://play.google.com/store/apps/details?id=com.joeyapps.tolerize",
     "https://apps.apple.com/app/id6809836040",
     "https://apps.apple.com/app/id6809835793",
     "https://apps.apple.com/app/id6815359469"
@@ -184,6 +185,17 @@
   .store-badges a:hover{ transform:translateY(-2px); filter:brightness(1.06); text-decoration:none; }
   .store-badges img{ height:44px; width:auto; display:block; }
   @media(max-width:560px){ .store-badges img{ height:38px; } }
+  /* pricing (subscription apps) */
+  .pricing{ margin:0 0 14px; padding:12px 14px; border-radius:var(--radius-sm); border:1px solid color-mix(in srgb,var(--c) 30%, transparent);
+    background:color-mix(in srgb,var(--c) 6%, transparent); font-size:14px; color:var(--muted); }
+  .pricing .head{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; margin-bottom:6px; }
+  .pricing .head b{ font-family:var(--font-ui); font-size:18px; color:var(--ink); }
+  .pricing .head span{ color:var(--c); font-weight:600; font-size:13px; }
+  .pricing table{ border-collapse:collapse; font-size:13.5px; margin:4px 0 6px; }
+  .pricing th, .pricing td{ text-align:left; padding:3px 18px 3px 0; font-weight:500; }
+  .pricing th{ color:var(--muted-d); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+  .pricing td{ color:var(--ink); }
+  .pricing p{ margin:6px 0 0; font-size:13px; }
   .status.soon{ color:var(--muted); background:rgba(255,255,255,.04); border-color:var(--line); }
   .status.soon .d{ background:var(--muted-d); box-shadow:none; }
   .status-row{ display:flex; flex-wrap:wrap; gap:7px; align-items:center; }
@@ -246,7 +258,7 @@
       <a class="btn btn-ghost" href="#apps">Browse the apps</a>
     </div>
     <div class="stat-row">
-      <div class="stat"><b>4</b><span>apps &amp; games shipped</span></div>
+      <div class="stat"><b>5</b><span>apps &amp; games shipped</span></div>
       <div class="stat"><b>1</b><span>reusable build pipeline</span></div>
       <div class="stat"><b>2</b><span>app stores shipped to</span></div>
       <div class="stat"><b>0</b><span>ads or tracking-for-its-own-sake</span></div>
@@ -312,7 +324,8 @@
       <p class="eyebrow">The catalogue</p>
       <h2 class="title">Apps &amp; games we've shipped</h2>
       <p class="section-lead">Five apps — strategy, word puzzle, tilt-physics arcade, and two family health
-        tools. All five are live on Google Play, three of them (Void's Horizon, Lexical Lattice and Puffers) on the App Store too, with Tolerize's iPhone app in Apple's review,
+        tools. All five are live on Google Play, three of them (Void's Horizon, Lexical Lattice and Puffers) on the App Store too, with
+        Cloud City and Tolerize for iPhone in Apple's review,
         and every one links to its hosted privacy policy and terms.</p>
 
       <div class="apps">
@@ -349,7 +362,7 @@
           <div class="card-body">
             <img class="app-icon" src="assets/apps/cloud-city/icon.png" alt="Cloud City icon" loading="lazy">
             <div class="app-meta">
-              <span class="status"><span class="d"></span>Live on Play Store</span>
+              <span class="status"><span class="d"></span>Live on Play Store · iOS in review</span>
               <h3>Cloud City</h3>
               <p class="tagline">Atmospheric settlement · Venus</p>
               <p class="desc">A real-time resource-management strategy game set in the clouds of Venus. Balance
@@ -404,9 +417,21 @@
               <p class="tagline">Shared inhaler tracker for families</p>
               <p class="desc">Makes running out of inhaler medication impossible to do by accident — and ends the
                 "did the other parent already give it?" question. Every puff is a one-tap, append-only log shared
-                across caregivers, with dose reminders, refill alerts and a count that's always right.</p>
+                across caregivers, with dose reminders, refill alerts and a count that's always right. If a dose
+                isn't logged within the hour, the other caregiver gets a heads-up.</p>
+              <div class="pricing">
+                <div class="head"><b>Free for 30 days</b><span>then one monthly subscription for the whole household</span></div>
+                <table>
+                  <tr><th></th><th>Google Play</th><th>App Store</th></tr>
+                  <tr><td>Canada</td><td>CA$2.79 / month</td><td>CA$2.99 / month</td></tr>
+                  <tr><td>United States</td><td>US$1.99 / month</td><td>US$1.99 / month</td></tr>
+                </table>
+                <p>No card needed for the trial, no per-member fees, cancel any time. 12 months free with a note
+                  from your child's doctor. Other countries pay the store's local price, shown in the app before you subscribe.</p>
+              </div>
               <div class="store-badges"><a href="https://apps.apple.com/app/id6809836040" target="_blank" rel="noopener"><img src="assets/badges/app-store.svg" alt="Download on the App Store" loading="lazy" width="120" height="40"></a><a href="https://play.google.com/store/apps/details?id=com.joeyapps.puffers" target="_blank" rel="noopener"><img src="assets/badges/google-play.png" alt="Get it on Google Play" loading="lazy" width="564" height="168"></a></div>
               <div class="links">
+                <a class="chip" href="puffers/">Get the app</a>
                 <a class="chip" href="https://policies.joeyapps.abrdns.com/puffers/privacy-policy.html">Privacy policy</a>
                 <a class="chip" href="https://policies.joeyapps.abrdns.com/puffers/terms-of-service.html">Terms of service</a>
               </div>
@@ -426,7 +451,7 @@
           <div class="card-body">
             <img class="app-icon" src="assets/apps/tolerize/icon.png" alt="Tolerize icon" loading="lazy">
             <div class="app-meta">
-              <span class="status"><span class="d"></span>Live on Play Store · iOS soon</span>
+              <span class="status"><span class="d"></span>Live on Play Store · iOS in review</span>
               <h3>Tolerize</h3>
               <p class="tagline">Oral immunotherapy tracker</p>
               <p class="desc">Helps families follow a child's food oral immunotherapy (OIT) or SLIT plan exactly

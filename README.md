@@ -28,7 +28,7 @@ repo (the `main` branch). It is **not** served by the Deck's Caddy.
 ## Refreshing app assets
 
 App store assets live in each app's own repo (`../cloud-city`, `../lexical-lattice`,
-`../voids-horizon`, `../puffers`). To re-pull and optimize them into `assets/apps/`, run a script
+`../voids-horizon`, `../puffers`, `../tolerize`). To re-pull and optimize them into `assets/apps/`, run a script
 like the one used to generate them: copy each app's `store_icon.png` → `icon.png` (256px),
 `feature_graphic.png` → `feature.png` (1024×500), and a couple of `screenshots/*` → `shotN.jpg`
 (resized to ~880px tall) with Pillow.
